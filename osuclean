@@ -1,0 +1,33 @@
+#!/usr/bin/fish
+
+# a fish shell script to delete all osu beatmaps from a certain location with an AR less than that of the desired one
+
+set beatmaps "/media/Ext1TB/games_win10/no_platform/osu_beatmaps/"**/*.osu # array of all .osu files
+set desired_AR $argv[1] # delete all beatmaps below this AR
+set n_maps_deleted 0
+
+for beatmap in $beatmaps
+    set -l AR (grep -Poi "(?<=ApproachRate:)(\d)+(\.)*\d*" $beatmap)
+
+    test -z "$AR" && echo -e "\e[31mMap "(basename $beatmap .osu)" has no AR, SKIPPING\e[0m" && continue
+    test $AR -ge $desired_AR && continue
+
+    # AR is less than desired, delete beatmap
+
+    echo -e "Removing AR: \e[31m$AR\e[0m map: \e[34m"(basename $beatmap .osu)"\e[0m"
+    rm -f $beatmap
+
+    set n_maps_deleted (math $n_maps_deleted + 1)
+
+    set beatmap_folder (string replace -i (basename $beatmap) '' $beatmap)
+    set num_beatmaps (count $beatmap_folder/*.osu)
+
+    # if there are no more difficulties in the current beatmap folder, delete it
+
+    test $num_beatmaps -lt 1 && begin 
+        echo -e "No more beatmaps in \e[31m'$beatmap_folder'\e[0m, REMOVING"
+        rm -rf $beatmap_folder
+    end
+end
+
+echo -e "\e[34mSuccessfully deleted $n_maps_deleted maps w/ AR < $desired_AR\e[0m"
