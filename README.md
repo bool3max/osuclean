@@ -7,18 +7,21 @@ An extremely simple python3 script for cleansing your osu! folder of any shit be
 ## Usage
 
 ```
-$ ./osuclean.py --help`
+$ ./osuclean.py --help
 
 usage: osuclean [-h] [--directory DIRECTORY] [--cleanup] [--approach-rate AR]
                 [--circle-size CS] [--hp-drain HP]
 ```
 
-- Delete all beatmaps with an AR below *9*: 
-    `./osuclean.py -a 9`
-- Delete all beatmaps with CS below *9*:
-    `./osuclean.py -c 9`
-- Delete all beatmaps with HP drain higher than `9`:
-    `./osuclean.py -d 9`
+- Delete all beatmaps with an AR below **9** : 
+
+    ```./osuclean.py -a 9```
+- Delete all beatmaps with CS below **9** :
+
+    ```./osuclean.py -c 9```
+- Delete all beatmaps with HP drain higher than **9** :
+
+    ```./osuclean.py -d 9```
 
 - If your beatmaps are stored in a non-standard (`%APPDATA\Local\osu!\Songs\`) location, specify the path with the `--directory`/`-D` flag: 
 
