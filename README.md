@@ -29,7 +29,7 @@ usage: osuclean [-h] [--directory DIRECTORY] [--cleanup] [--approach-rate AR]
 
 - To remove all beatmap folders with no associated difficulties in them, use `--cleanup`/`-C` (you should never have to do this in normal circumstances unless you were manually deleting `.osu` files`: 
 
-`./osuclean.py --cleanup`
+    `./osuclean.py --cleanup`
 
 ---
 
