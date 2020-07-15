@@ -23,7 +23,7 @@ usage: osuclean [-h] [--directory DIRECTORY] [--cleanup] [--approach-rate AR]
 
     ```./osuclean.py -d 9```
 
-- If your beatmaps are stored in a non-standard (`%APPDATA\Local\osu!\Songs\`) location, specify the path with the `--directory`/`-D` flag: 
+- If your beatmaps are stored in a non-standard (`%APPDATA%\Local\osu!\Songs\`) location, specify the path with the `--directory`/`-D` flag: 
 
     `./osuclean.py -D "D:\my_osu_beatmaps"`
 
