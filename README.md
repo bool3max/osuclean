@@ -2,8 +2,6 @@
 
 An extremely simple python3 script for cleansing your osu! folder of any shit beatmaps.
 
----
-
 ## Usage
 
 ```
@@ -34,9 +32,6 @@ usage: osuclean [-h] [--directory DIRECTORY] [--cleanup] [--approach-rate AR]
 ---
 
 I have only tested the script using cpython on archlinux but it should work on Windows w/ python3 without any problems.
-
----
-
 
 ### `fish` shell script
 
